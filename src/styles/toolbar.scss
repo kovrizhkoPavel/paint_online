@@ -5,6 +5,7 @@
 
   height: $toolbar-height;
   width: 100%;
+  padding: 0 10px;
 
   display: flex;
   align-items: center;
@@ -13,4 +14,50 @@
   box-shadow: 0 4px 5px $shadow-color;
 
   z-index: 10;
+
+  &__button {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    background: $white-color;
+
+    &:hover,
+    &:focus {
+      opacity: 0.3;
+    }
+
+    transition: $transition;
+  }
+
+  &__input-color {
+    margin-left: 10px;
+    opacity: 0;
+
+    & input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 29px;
+      border: none;
+      border-radius: 50%;
+
+      &::-webkit-color-swatch {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
 }
+
+.undo {
+  margin-left: auto;
+}
+
