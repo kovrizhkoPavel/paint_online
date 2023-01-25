@@ -6,9 +6,9 @@ import Canvas from './components/Canvas'
 
 const App: FC = () => {
   return <div className="app">
-    <Toolbar/>
-    <SettingsBar/>
-    <Canvas/>
+     <Toolbar/>
+     <SettingsBar/>
+     <Canvas/>
   </div>
 }
 
