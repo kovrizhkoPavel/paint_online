@@ -15,9 +15,12 @@ const Canvas: FC = () => {
     }
   }, [])
 
+  const width = document.documentElement.clientWidth * 0.8
+  const height = document.documentElement.clientHeight * 0.7
+
   return (
     <div className="canvas">
-      <canvas ref={canvasRef} width={600} height={400}></canvas>
+      <canvas ref={canvasRef} width={width} height={height}></canvas>
     </div>
   )
 }
