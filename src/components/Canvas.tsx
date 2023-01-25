@@ -9,8 +9,8 @@ const Canvas: FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    CanvasStore.setCanvas(canvasRef.current)
     if (canvasRef.current !== null) {
+      CanvasStore.setCanvas(canvasRef.current)
       ToolStore.setTool(new Brush(canvasRef.current))
     }
   }, [])

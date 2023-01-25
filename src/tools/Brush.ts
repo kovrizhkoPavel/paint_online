@@ -13,18 +13,14 @@ export default class Brush extends Tool {
     this.canvas.onmousemove = this.onMouseMoveHandler.bind(this)
   }
 
-  onMouseUpHandler (evt: MouseEvent): void {
+  onMouseUpHandler (): void {
     this.isMouseDown = false
   }
 
   onMouseDownHandler (evt: MouseEvent): void {
     if (evt.target === null) return
 
-    const { pageX, pageY } = evt
-    const { offsetTop, offsetLeft } = evt.target as HTMLCanvasElement
-
-    const x = pageX - offsetLeft
-    const y = pageY - offsetTop
+    const { x, y } = this.getCods(evt)
 
     this.isMouseDown = true
     this.ctx?.beginPath()
@@ -34,11 +30,8 @@ export default class Brush extends Tool {
   onMouseMoveHandler (evt: MouseEvent): void {
     if (!this.isMouseDown || evt.target === null) return
 
-    const { pageX, pageY } = evt
-    const { offsetTop, offsetLeft } = evt.target as HTMLCanvasElement
+    const { x, y } = this.getCods(evt)
 
-    const x = pageX - offsetLeft
-    const y = pageY - offsetTop
     this.draw(x, y)
   }
 

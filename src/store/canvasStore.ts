@@ -1,13 +1,13 @@
 import { makeAutoObservable } from 'mobx'
 
 class CanvasStore {
-  private canvas: HTMLCanvasElement | null = null
+  canvas: HTMLCanvasElement | null = null
 
   constructor () {
     makeAutoObservable(this)
   }
 
-  setCanvas (canvas: HTMLCanvasElement | null): void {
+  setCanvas (canvas: HTMLCanvasElement): void {
     this.canvas = canvas
   }
 }
