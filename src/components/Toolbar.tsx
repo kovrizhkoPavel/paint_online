@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import '../styles/toolbar.scss';
-import { BsBrush, BsCircle, BsEraser, BsSlashLg, BsSquare, BsSquareFill } from 'react-icons/bs';
+import {
+  BsBrush,
+  BsCircle,
+  BsCircleFill,
+  BsEraser,
+  BsSlashLg,
+  BsSquare,
+  BsSquareFill,
+} from 'react-icons/bs';
 import { AiOutlineSave } from 'react-icons/ai';
 import { BiRedo, BiUndo } from 'react-icons/bi';
 import Palette from './Palette';
@@ -38,6 +46,9 @@ const Toolbar: FC = () => {
       </button>
       <button className="toolbar__button circle">
         <BsCircle size={25} />
+      </button>
+      <button className="toolbar__button circle">
+        <BsCircleFill size={25} />
       </button>
       <button className="toolbar__button eraser">
         <BsEraser size={25} />
