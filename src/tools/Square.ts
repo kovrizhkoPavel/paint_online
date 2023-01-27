@@ -1,6 +1,6 @@
 import Tool from './Tool';
 
-export default class Brush extends Tool {
+export default class Square extends Tool {
   private isMouseDown: boolean = false;
   constructor(canvas: HTMLCanvasElement) {
     super(canvas);

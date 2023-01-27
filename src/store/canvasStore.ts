@@ -1,15 +1,15 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable } from 'mobx';
 
 class CanvasStore {
-  canvas: HTMLCanvasElement | null = null
+  canvas: HTMLCanvasElement | null = null;
 
-  constructor () {
-    makeAutoObservable(this)
+  constructor() {
+    makeAutoObservable(this);
   }
 
-  setCanvas (canvas: HTMLCanvasElement): void {
-    this.canvas = canvas
+  setCanvas(canvas: HTMLCanvasElement): void {
+    this.canvas = canvas;
   }
 }
 
-export default new CanvasStore()
+export default new CanvasStore();

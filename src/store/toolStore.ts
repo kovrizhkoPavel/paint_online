@@ -1,16 +1,16 @@
-import { makeAutoObservable } from 'mobx'
-import Brush from '../tools/Brush'
+import { makeAutoObservable } from 'mobx';
+import Brush from '../tools/Brush';
 
 class ToolStore {
-  tool: Brush | null = null
+  tool: Brush | null = null;
 
-  constructor () {
-    makeAutoObservable(this)
+  constructor() {
+    makeAutoObservable(this);
   }
 
-  setTool (tool: Brush): void {
-    this.tool = tool
+  setTool(tool: Brush): void {
+    this.tool = tool;
   }
 }
 
-export default new ToolStore()
+export default new ToolStore();

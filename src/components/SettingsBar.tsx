@@ -1,12 +1,8 @@
-import React, { FC } from 'react'
-import '../styles/settingsBar.scss'
+import React, { FC } from 'react';
+import '../styles/settingsBar.scss';
 
 const SettingsBar: FC = () => {
-  return (
-    <div className="settingsBar">
+  return <div className="settingsBar"></div>;
+};
 
-    </div>
-  )
-}
-
-export default SettingsBar
+export default SettingsBar;
