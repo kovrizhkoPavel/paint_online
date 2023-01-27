@@ -13,7 +13,7 @@ export default abstract class Tool {
     this.canvas.onmousemove = null;
   }
 
-  protected getCods(evt: MouseEvent): { x: number; y: number } {
+  protected getCords(evt: MouseEvent): { x: number; y: number } {
     const { pageX, pageY } = evt;
     const { offsetTop, offsetLeft } = evt.target as HTMLCanvasElement;
 

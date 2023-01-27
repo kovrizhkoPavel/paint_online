@@ -20,7 +20,7 @@ export default class Brush extends Tool {
   onMouseDownHandler(evt: MouseEvent): void {
     if (evt.target === null) return;
 
-    const { x, y } = this.getCods(evt);
+    const { x, y } = this.getCords(evt);
 
     this.isMouseDown = true;
     this.ctx?.beginPath();
@@ -30,7 +30,7 @@ export default class Brush extends Tool {
   onMouseMoveHandler(evt: MouseEvent): void {
     if (!this.isMouseDown || evt.target === null) return;
 
-    const { x, y } = this.getCods(evt);
+    const { x, y } = this.getCords(evt);
 
     this.draw(x, y);
   }

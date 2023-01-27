@@ -1,14 +1,17 @@
 import { makeAutoObservable } from 'mobx';
 import Brush from '../tools/Brush';
+import Square from '../tools/Square';
+
+type TTools = Brush | Square;
 
 class ToolStore {
-  tool: Brush | null = null;
+  tool: TTools | null = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setTool(tool: Brush): void {
+  setTool(tool: TTools): void {
     this.tool = tool;
   }
 }
