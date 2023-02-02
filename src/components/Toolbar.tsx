@@ -17,6 +17,7 @@ import ToolStore from '../store/toolStore';
 import Brush from '../tools/Brush';
 import Square from '../tools/Square';
 import Circle from '../tools/Circle';
+import Eraser from '../tools/Eraser';
 
 const Toolbar: FC = () => {
   return (
@@ -61,7 +62,12 @@ const Toolbar: FC = () => {
       >
         <BsCircleFill size={25} />
       </button>
-      <button className="toolbar__button eraser">
+      <button
+        className="toolbar__button eraser"
+        onClick={() => {
+          ToolStore.setTool(new Eraser(CanvasStore.canvas as HTMLCanvasElement));
+        }}
+      >
         <BsEraser size={25} />
       </button>
       <button className="toolbar__button line">
