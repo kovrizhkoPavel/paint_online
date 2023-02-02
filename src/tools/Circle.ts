@@ -1,6 +1,6 @@
 import Tool from './Tool';
 
-export default class Square extends Tool {
+export default class Circle extends Tool {
   private isMouseDown: boolean = false;
   private readonly isFill: boolean = false;
   private startX: number = 0;
@@ -41,18 +41,19 @@ export default class Square extends Tool {
 
     const width = x - this.startX;
     const height = y - this.startY;
+    const radius = Math.sqrt(width ** 2 + height ** 2);
 
-    this.draw(this.startX, this.startY, width, height);
+    this.draw(this.startX, this.startY, radius);
   }
 
-  draw(x: number, y: number, w: number, h: number): void {
+  draw(x: number, y: number, r: number): void {
     const img = new Image();
     img.src = this.saved;
     img.onload = () => {
       this.ctx?.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx?.drawImage(img, 0, 0, this.canvas.width, this.canvas.height);
       this.ctx?.beginPath();
-      this.ctx?.rect(x, y, w, h);
+      this.ctx?.arc(x, y, r, 0, 2 * Math.PI);
       if (this.isFill) {
         this.ctx?.fill();
         return;

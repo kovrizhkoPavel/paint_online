@@ -1,8 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 import Brush from '../tools/Brush';
 import Square from '../tools/Square';
+import Circle from '../tools/Circle';
 
-type TTools = Brush | Square;
+type TTools = Brush | Square | Circle;
 
 class ToolStore {
   tool: TTools | null = null;
