@@ -1,10 +1,28 @@
 export default abstract class Tool {
-  canvas: HTMLCanvasElement;
-  ctx: CanvasRenderingContext2D | null;
-  constructor(canvas: HTMLCanvasElement) {
+  protected canvas: HTMLCanvasElement;
+  protected ctx: CanvasRenderingContext2D | null;
+  protected constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.destroyEvent();
+  }
+
+  setStrokeColor(color: string): void {
+    if (this?.ctx !== null) {
+      this.ctx.strokeStyle = color;
+    }
+  }
+
+  setFillColor(color: string): void {
+    if (this?.ctx !== null) {
+      this.ctx.fillStyle = color;
+    }
+  }
+
+  setLineWidth(width: number): void {
+    if (this?.ctx !== null) {
+      this.ctx.lineWidth = width;
+    }
   }
 
   protected destroyEvent(): void {
