@@ -80,10 +80,20 @@ const Toolbar: FC = () => {
         <BsSlashLg size={25} />
       </button>
       <Palette />
-      <button className="toolbar__button undo">
+      <button
+        className="toolbar__button undo"
+        onClick={() => {
+          CanvasStore.undo();
+        }}
+      >
         <BiUndo size={25} />
       </button>
-      <button className="toolbar__button redo">
+      <button
+        className="toolbar__button redo"
+        onClick={() => {
+          CanvasStore.redo();
+        }}
+      >
         <BiRedo size={25} />
       </button>
       <button className="toolbar__button save">

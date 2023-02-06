@@ -18,9 +18,14 @@ const Canvas: FC = () => {
   const width = document.documentElement.clientWidth * 0.8;
   const height = document.documentElement.clientHeight * 0.7;
 
+  const onMouseDown = (): void => {
+    if (canvasRef.current === null) return;
+    CanvasStore.pushUndo(canvasRef.current.toDataURL());
+  };
+
   return (
     <div className="canvas">
-      <canvas ref={canvasRef} width={width} height={height}></canvas>
+      <canvas onMouseDown={onMouseDown} ref={canvasRef} width={width} height={height}></canvas>
     </div>
   );
 };
