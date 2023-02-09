@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "eslint": "eslint --ext .tsx,.ts --fix ./src -c .eslintrc.js"
+    "dev": "nodemon node_modules/index.ts",
+    "eslint": "eslint --ext .tsx,.ts --fix ./src -c ../client/.eslintrc.js"
   },
   "keywords": [],
   "author": "",
